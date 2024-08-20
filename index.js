@@ -3,12 +3,13 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const AppRoutes = require('./src/routes'); 
-const { errorHandler } = require('./src//utills/errorHandler');
+const { errorHandler } = require('./src/utills/errorHandler');
+const path = require('path');
 
 dotenv.config();
 const app = express();
 app.use(express.json());
-
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api', AppRoutes);
 
 connectDB();
