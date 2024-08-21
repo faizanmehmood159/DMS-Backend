@@ -19,6 +19,6 @@ const medicalInfoSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-const MedicalInfo = mongoose.model('MedicalInfo', medicalInfoSchema);
+const MedicalInfo = mongoose.model('Medical Info', medicalInfoSchema);
 
 module.exports = MedicalInfo;
