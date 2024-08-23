@@ -3,12 +3,12 @@ const MedicalInfo = require('../../../models/medicalInfo');
 const ApiError = require('../../../utills/apiError');
 
 const addMedicalInfo = [
-  // Validation middleware
+
   body('main_specialization').notEmpty().withMessage('Main specialization is required'),
   body('medical_education').notEmpty().withMessage('Medical education is required'),
   body('period').notEmpty().withMessage('Period is required'),
 
-  // Controller logic
+  
   async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
