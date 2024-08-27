@@ -24,17 +24,8 @@ const doctorSchema = new mongoose.Schema({
     required: true,
     match: [/^\d{10}$/, 'Please enter a valid phone number']
   },
-  address: {
+  city: {
     type: String,
-    required: true
-  },
-  doctor_weight: {
-    type: Number,
-    required: true
-  },
-  marital_status: {
-    type: String,
-    enum: ['Single', 'Married', 'Divorced', 'Widowed'],
     required: true
   },
   sex: {
@@ -42,20 +33,33 @@ const doctorSchema = new mongoose.Schema({
     enum: ['Male', 'Female', 'Other'],
     required: true
   },
-  blood_group: {
+  languages: {
     type: String,
-    enum: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
+    enum: ['English', 'French', 'Arabic', 'German'],
     required: true
   },
   DOB: {
     type: String,
     required: true
   },
-  doctor_height: {
-    type: Number,
+  nationality: {
+    type: String,
+    enum: ['Maroc', 'Tunisie', 'Algerier', 'Egypt'],
     required: true
   },
-  doctor_history: {
+  zip: {
+    type: String,
+    required: true
+  },
+  user_role: {
+    type: String,
+    required: true
+  },
+  address: {
+    type: String,
+    required: true
+  },
+  bio: {
     type: String,
     required: false
   }
